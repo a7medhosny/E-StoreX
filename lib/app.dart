@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
 
   bool isUserLoggedIn =
       TokenManager.token != null || TokenManager.guestId != null;
+  bool isNew = TokenManager.newUser == null;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,9 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (_) => getIt<SearchCubit>()),
             BlocProvider(create: (_) => getIt<OrderCubit>()),
             BlocProvider(create: (_) => getIt<LoginCubit>()),
-            BlocProvider(create: (_) => getIt<BasketCubit>()..initBasketItems()),
+            BlocProvider(
+              create: (_) => getIt<BasketCubit>()..initBasketItems(),
+            ),
             BlocProvider(create: (context) => getIt<BrandCubit>()),
 
             BlocProvider(create: (_) => NavCubit()),
@@ -66,7 +69,10 @@ class MyApp extends StatelessWidget {
                   : MaterialApp(
                     debugShowCheckedModeBanner: false,
                     onGenerateRoute: appRouter.onGenerateRoute,
-                    initialRoute: Routes.onBoarding,
+                    initialRoute:
+                        isNew
+                            ? Routes.onBoarding
+                            : Routes.loginRegisterTabSwitcher,
                   ),
         );
       },

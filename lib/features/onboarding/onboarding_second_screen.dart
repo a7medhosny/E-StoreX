@@ -166,6 +166,10 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                       text: 'Join Us',
                       isVisible: visibleList[5],
                       onPressed: () {
+                        CacheNetwork.insertToCache(
+                          key: CacheKeys.newUser,
+                          value: '1',
+                        );
                         Navigator.pushNamed(
                           context,
                           Routes.loginRegisterTabSwitcher,
@@ -179,6 +183,10 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                       isVisible: visibleList[6],
                       isOutlined: true,
                       onPressed: () {
+                        CacheNetwork.insertToCache(
+                          key: CacheKeys.newUser,
+                          value: '1',
+                        );
                         Navigator.pushNamed(
                           context,
                           Routes.loginRegisterTabSwitcher,
@@ -201,6 +209,10 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                             value: guestId,
                           );
                         }
+                        CacheNetwork.insertToCache(
+                          key: CacheKeys.newUser,
+                          value: '1',
+                        );
                         Navigator.pushNamedAndRemoveUntil(
                           context,
                           Routes.layoutScreen,

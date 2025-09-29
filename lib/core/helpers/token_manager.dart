@@ -10,6 +10,7 @@ class TokenManager {
   static String? get email => CacheNetwork.getCacheData(key: CacheKeys.email);
   static String? get userId => CacheNetwork.getCacheData(key: CacheKeys.userId);
   static String? get guestId => CacheNetwork.getCacheData(key: CacheKeys.guestId);
+  static String? get newUser => CacheNetwork.getCacheData(key: CacheKeys.newUser);
 
 
   static DateTime? get expiration {

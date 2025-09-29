@@ -232,7 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     verticalSpace(30),
                     Text(
-                      profile.userName ?? "No Name",
+                      profile.displayName ?? "No Name",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20.sp,
@@ -279,7 +279,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           UserAccountsDrawerHeader(
             accountName: Text(
-              profile.userName ?? "Guest",
+              profile.displayName ?? "No Name",
               style: TextStyle(fontSize: 16.sp),
             ),
             accountEmail: Text(

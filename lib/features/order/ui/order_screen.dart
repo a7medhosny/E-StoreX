@@ -45,14 +45,12 @@ class _OrderScreenState extends State<OrderScreen> {
               _showSnack(context, "Please complete the form", Colors.red);
               return;
             }
-
             await context.read<OrderCubit>().createOrder(
               basketId: TokenManager.userId ?? '',
               deliveryMethodId: selectedDeliveryMethodId!,
               shippingAddress: shippingAddress!,
             );
-
-            context.read<OrderCubit>().makePayment(
+            context.read<OrderCubit>().makePayment(g
               paymentResponse: state.paymentResponse,
             );
           } else if (state is GetPaymentIntentDataError) {

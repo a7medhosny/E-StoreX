@@ -7,4 +7,5 @@ class CacheKeys {
   static const String email = 'email';
   static const String userId = 'userId';
   static const String guestId = 'guestId';
+  static const String newUser="newUser";
 }
